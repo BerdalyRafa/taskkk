@@ -38,6 +38,16 @@ public class Main {
             return n * factorial(n - 1);
         }
     }
+
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -77,7 +87,15 @@ public class Main {
             System.out.println( result);
         }
 
-
+        // Task 5
+        System.out.print("");
+        int fibonacciNumber = scanner.nextInt();
+        if (fibonacciNumber < 0) {
+            System.out.println("not defined for negative numbers.");
+        } else {
+            int fibonacciResult = fibonacci(fibonacciNumber);
+            System.out.println( fibonacciResult);
+        }
 
 
         scanner.close();
