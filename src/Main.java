@@ -59,6 +59,15 @@ public class Main {
         }
     }
 
+    public static void reverseArray(int[] arr, int n) {
+        if (n == 0) {
+            return;
+        }
+        System.out.print(arr[n - 1] + " ");
+        reverseArray(arr, n - 1);
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -116,6 +125,20 @@ public class Main {
         double powerResult = power(a, exponent);
         System.out.println(a + " raised to the power of " + exponent + ": " + powerResult);
 
+
+        // Task 7
+        System.out.println("Enter the number of elements in the array: ");
+        n = scanner.nextInt();
+
+        int[] arrayToReverse = new int[n];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            arrayToReverse[i] = scanner.nextInt();
+        }
+        System.out.print("Reversed array: ");
+        reverseArray(arrayToReverse, arrayToReverse.length);
+        System.out.println();
 
         scanner.close();
     }
