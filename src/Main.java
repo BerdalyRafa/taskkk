@@ -9,7 +9,14 @@ public class Main {
             return Math.min(min, arr[n - 1]);
         }
     }
-
+    public static double findAverage(int[] arr, int n) {
+        if (n == 0) {
+            return arr[0];
+        } else {
+            double sum = findAverage(arr, n - 1) * (n - 1) + arr[n - 1];
+            return sum / n;
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -25,6 +32,10 @@ public class Main {
         }
         int min = findMin(array, array.length);
         System.out.println("minimum num: " + min);
+
+        // Task 2
+        double average = findAverage(array, array.length);
+        System.out.println("Average of numbers in the array: " + average);
         scanner.close();
     }
 
