@@ -57,9 +57,8 @@ public class Main {
         // Task 2
         double average = findAverage(array, array.length);
         System.out.println("Average of numbers in the array: " + average);
-
         // Task 3
-        System.out.print("Enter a number to check if it's prime or composite: ");
+        System.out.print(" prime or composite: ");
         int numberToCheck = scanner.nextInt();
         boolean isPrimeNumber = isPrime(numberToCheck, 2);
         if (isPrimeNumber) {
@@ -67,15 +66,18 @@ public class Main {
         } else {
             System.out.println(numberToCheck + " is a composite number.");
         }
+
         // Task 4
         System.out.print("Enter a number to calculate its factorial: ");
         int number = scanner.nextInt();
         if (number < 0) {
-            System.out.println("Factorial is not defined for negative numbers.");
+            System.out.println("not defined for negative numbers.");
         } else {
             int result = factorial(number);
-            System.out.println("Factorial of " + number + ": " + result);
+            System.out.println( result);
         }
+
+
 
 
         scanner.close();
