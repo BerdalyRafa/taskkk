@@ -48,6 +48,17 @@ public class Main {
             return fibonacci(n - 1) + fibonacci(n - 2);
         }
     }
+
+    public static double power(double a, int n) {
+        if (n == 0) {
+            return 1;
+        } else if (n > 0) {
+            return a * power(a, n - 1);
+        } else {
+            return 1 / (a * power(a, -n - 1));
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -96,6 +107,14 @@ public class Main {
             int fibonacciResult = fibonacci(fibonacciNumber);
             System.out.println( fibonacciResult);
         }
+
+        // Task 6
+        System.out.print("Enter a base number (a): ");
+        double a = scanner.nextDouble();
+        System.out.print("Enter an exponent (n): ");
+        int exponent = scanner.nextInt();
+        double powerResult = power(a, exponent);
+        System.out.println(a + " raised to the power of " + exponent + ": " + powerResult);
 
 
         scanner.close();
