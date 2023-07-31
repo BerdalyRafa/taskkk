@@ -67,6 +67,16 @@ public class Main {
         reverseArray(arr, n - 1);
     }
 
+    public static boolean allDigits(String s) {
+        if (s.length() == 0) {
+            return false;
+        } else if (s.length() == 1) {
+            return Character.isDigit(s.charAt(0));
+        } else {
+            char firstChar = s.charAt(0);
+            return Character.isDigit(firstChar) && allDigits(s.substring(1));
+        }
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -139,6 +149,17 @@ public class Main {
         System.out.print("Reversed array: ");
         reverseArray(arrayToReverse, arrayToReverse.length);
         System.out.println();
+
+
+        // Task 8
+        System.out.print("Enter a string to check if it consists of only digits: ");
+        scanner.nextLine(); // Consume the previous newline character
+        String input = scanner.nextLine();
+        if (allDigits(input)) {
+            System.out.println("The input consists of only digits.");
+        } else {
+            System.out.println("The input contains non-digit characters.");
+        }
 
         scanner.close();
     }
