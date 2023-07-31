@@ -78,6 +78,13 @@ public class Main {
         }
     }
 
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -160,6 +167,20 @@ public class Main {
         } else {
             System.out.println("The input contains non-digit characters.");
         }
+
+
+        // Task 10
+        System.out.print("Enter the first number (a): ");
+        int numA = scanner.nextInt();
+        System.out.print("Enter the second number (b): ");
+        int numB = scanner.nextInt();
+        if (numA < 0 || numB < 0) {
+            System.out.println("Sorry, try again by entering non-negative numbers.");
+        } else {
+            int gcdResult = gcd(numA, numB);
+            System.out.println("GCD of " + numA + " and " + numB + ": " + gcdResult);
+        }
+
 
         scanner.close();
     }
